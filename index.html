@@ -50,8 +50,9 @@
     transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s;
   }
   
-  .btn-share:hover { 
+.btn-share:hover { 
     background: linear-gradient(180deg, var(--blu), var(--blu-hover));
+    transform: translateY(-2px); /* È questo che lo fa "saltare" in alto! */
     box-shadow: 0 12px 28px rgba(65, 76, 106, 0.22), 0 4px 10px rgba(0,0,0,.06);
   }
   .btn-share:active { transform: scale(0.97); }
