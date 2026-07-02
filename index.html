@@ -283,7 +283,7 @@
         <strong>Mostra questo QR Code in cassa</strong>
       </p>
       
-      <img src="QRCode_09949751219.png" alt="QR Code Agenzia delle Entrate">
+      <img src="QRCode_09949751219.gif" alt="QR Code Agenzia delle Entrate">
       
       <button class="btn-share" id="btnCondividiFattura">
         <i class="fa-solid fa-share-nodes"></i> Invia dati al volo
@@ -406,11 +406,11 @@ function fallback(testo, cb){
 	/* ---------- Condivisione Rapida Dati Fatturazione ---------- */
 document.getElementById('btnCondividiFattura').addEventListener('click', function() {
   var testoFatturazione = "Dati per Fatturazione Elettronica:\n\n" +
-                          "Ragione Sociale: Rocco Massimiliano\n" +
-                          "Indirizzo: Via J. F. Kennedy 71 - 80010 Quarto (NA)\n" +
-                          "P. IVA: 09949751219\n" +
-                          "Codice SDI: W7YVJK9\n" +
-                          "PEC: la_tua_pec@legalmail.it"; 
+                          "Rocco Massimiliano\n" +
+                          "Via J. F. Kennedy 71 - 80010 Quarto (NA)\n" +
+                          "P.IVA 09949751219\n" +
+                          "W7YVJK9\n" +
+                          "m.rocco86@pec.it"; 
 
   if (navigator.share) {
     navigator.share({
