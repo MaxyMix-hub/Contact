@@ -239,7 +239,7 @@
   </div>
 
   <div class="pulsanti">
-    <button class="btn" id="btnRubrica"><i class="fa-solid fa-address-card"></i> Salva Contatto</button>
+    <a class="btn" href="Massimiliano_Rocco.vcf"><i class="fa-solid fa-address-card"></i> Salva Contatto</a>
     <a class="btn" href="tel:+393478810607"><i class="fa-solid fa-phone"></i> Chiamami</a>
     <a class="btn" href="https://wa.me/393478810607?text=Ciao%20Massimiliano,%20ti%20contatto%20dal%20tuo%20biglietto%20da%20visita%20digitale." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <a class="btn" href="mailto:massimiliano.rocco86@gmail.com"><i class="fa-solid fa-envelope"></i> Scrivimi una mail</a>
@@ -320,45 +320,6 @@
 </div>
 
 <script>
-function generaVCard(){
-  return [
-    "BEGIN:VCARD",
-    "VERSION:3.0",
-    "N:Rocco;Massimiliano;;;",
-    "FN:Massimiliano Rocco",
-    "ORG:Agenzia Rocco",
-    "TITLE:Sales Agent Campania",
-    "TEL;TYPE=CELL:+393478810607",
-    "EMAIL;TYPE=internet:massimiliano.rocco86@gmail.com",    
-    "TEL;TYPE=WORK,VOICE:+390818763921",
-    "EMAIL;TYPE=WORK:info@agenziarocco.it",
-    "ADR;TYPE=WORK:;;Via J. F. Kennedy 71;Quarto;NA;80010;Italia",
-    "END:VCARD"
-  ].join("\r\n");
-}
-
-function isIOS(){
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-}
-
-document.getElementById('btnRubrica').addEventListener('click', function(){
-  var vcard = generaVCard();
-  if (isIOS()){
-    var dataUri = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcard);
-    window.location.href = dataUri;
-  } else {
-    var blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = "Massimiliano_Rocco.vcf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
-  }
-});
 
 document.querySelectorAll('.copia-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
