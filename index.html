@@ -7,9 +7,9 @@
 <style>
 /* Stile base del contenitore a cassetto */
 .box-fatturazione {
-  background: white;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Crea un bordino leggero e semitrasparente per delimitarlo con eleganza */
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   margin-top: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -33,7 +33,7 @@
 
 /* Effetto hover sulla barra */
 .btn-fatturazione:hover {
-  background-color: #f8f9fa;
+background-color: rgba(0, 0, 0, 0.05); /* Crea un leggerissimo scurimento quando ci passi sopra, invece del grigio pieno */
 }
 
 /* Il contenuto interno che appare quando è aperto */
