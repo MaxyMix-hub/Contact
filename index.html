@@ -5,6 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Massimiliano Rocco - Contatti</title>
 <style>
+/* Stile base del contenitore a cassetto */
+.box-fatturazione {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Stile della barra cliccabile */
+.btn-fatturazione {
+  padding: 15px 20px;
+  font-weight: 600;
+  color: var(--blu, #1a237e); /* Assicurati che richiami il tuo blu */
+  cursor: pointer;
+  list-style: none; /* Nasconde la freccia standard */
+  text-align: center;
+  user-select: none;
+}
+
+/* Nasconde la freccia standard anche su Safari/Chrome vecchi */
+.btn-fatturazione::-webkit-details-marker {
+  display: none;
+}
+
+/* Effetto hover sulla barra */
+.btn-fatturazione:hover {
+  background-color: #f8f9fa;
+}
+
+/* Il contenuto interno che appare quando è aperto */
+.contenuto-fatturazione {
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+/* Lo stile dell'immagine del QR */
+.qr-cassa {
+  max-width: 180px; /* Dimensione perfetta per farsi scannerizzare dalla pistola */
+  height: auto;
+  margin: 15px auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Stile del testo dei dati */
+.contenuto-fatturazione p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.contenuto-fatturazione strong {
+  color: #222;
+}
+  
   :root{
     --blu: #414C6A;
     --blu-hover: #2e364b;
@@ -247,71 +305,27 @@
     <a class="btn" href="mailto:info@agenziarocco.it"><i class="fa-solid fa-paper-plane"></i> Email Ufficio</a>
   </div>
 
-  <div class="sezione">
-    <h2>Scegli il tuo navigatore</h2>
-    <div class="nav-box">
-      <a class="nav-btn" href="https://www.google.com/maps/search/?api=1&query=Via+J.+F.+Kennedy+71,+80010+Quarto+NA" target="_blank" rel="noopener">
-        <i class="fa-solid fa-location-dot" style="color: #4285F4;"></i> Google Maps
-      </a>
-      <a class="nav-btn" href="https://maps.apple.com/?q=Via+J.+F.+Kennedy+71,+80010+Quarto+NA" target="_blank" rel="noopener">
-        <i class="fa-brands fa-apple" style="color: #000000;"></i> Apple Maps
-      </a>
-      <a class="nav-btn" href="https://waze.com/ul?q=Via+J.+F.+Kennedy+71,+80010+Quarto+NA" target="_blank" rel="noopener">
-        <i class="fa-brands fa-waze" style="color: #33CCFF;"></i> Waze
-      </a>
-    </div>
+<!-- Cassetto Dati Fatturazione -->
+<details class="box-fatturazione">
+  <summary class="btn-fatturazione">
+    <i class="fa-solid fa-receipt"></i> Dati Fatturazione e QR Code
+  </summary>
+  
+  <div class="contenuto-fatturazione">
+    <!-- Inserisci qui il nome o il percorso della tua immagine del QR -->
+    <img src="QRCode_09949751219.gif" alt="QR Code Agenzia Entrate" class="qr-cassa">
+    
+    <p><strong>Ragione Sociale:</strong> Massimiliano Rocco</p>
+    <p><strong>P. IVA:</strong> 09949751219</p>
+    <p><strong>Codice SDI:</strong> W7YVJK9</p>
+    <p><strong>PEC:</strong> m.rocco86@pec.it</p>
   </div>
-
-  <div class="sezione">
-    <h2>Dati di fatturazione</h2>
-
-    <div class="box-cassa">
-      <p style="font-size: 0.85rem; color: var(--blu); margin-bottom: 16px;">
-        <strong>Mostra questo QR Code in cassa</strong>
-      </p>
-      
-      <img src="QRCode_09949751219.gif" alt="QR Code Agenzia delle Entrate" onerror="this.style.display='none'">
+</details>
       
       <button class="btn-share" id="btnCondividiFattura">
         <i class="fa-solid fa-share-nodes"></i> Invia dati al volo
       </button>
     </div>
-
-    <div class="fatt-riga">
-      <div class="info">
-        <strong>Ragione Sociale:</strong><br>Rocco Massimiliano
-      </div>
-      <button class="copia-btn" data-copia="Rocco Massimiliano">Copia</button>
-    </div>
-
-    <div class="fatt-riga">
-      <div class="info">
-        <strong>Indirizzo:</strong><br>Via J. F. Kennedy 71 - 80010 Quarto (NA)
-      </div>
-      <button class="copia-btn" data-copia="Via J. F. Kennedy 71 - 80010 Quarto (NA)">Copia</button>
-    </div>
-
-    <div class="fatt-riga">
-      <div class="info">
-        <strong>P. IVA:</strong><br>09949751219
-      </div>
-      <button class="copia-btn" data-copia="09949751219">Copia</button>
-    </div>
-
-    <div class="fatt-riga">
-      <div class="info">
-        <strong>Codice SDI:</strong><br>W7YVJK9
-      </div>
-      <button class="copia-btn" data-copia="W7YVJK9">Copia</button>
-    </div>
-
-    <div class="fatt-riga">
-      <div class="info">
-        <strong>PEC:</strong><br>m.rocco86@pec.it
-      </div>
-      <button class="copia-btn" data-copia="m.rocco86@pec.it">Copia</button>
-    </div>
-  </div>
 
   <div class="footer-logo">
     <img src="Logo_agenzia.png" alt="Logo Agenzia Rocco" class="logo-bottom" onerror="this.style.display='none'">
@@ -321,22 +335,6 @@
 
 <script>
 
-document.querySelectorAll('.copia-btn').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var testo = btn.getAttribute('data-copia');
-    var fatto = function(){
-      var orig = btn.textContent;
-      btn.textContent = "Copiato ✓";
-      btn.classList.add('ok');
-      setTimeout(function(){ btn.textContent = orig; btn.classList.remove('ok'); }, 1500);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(testo).then(fatto).catch(function(){ fallback(testo, fatto); });
-    } else {
-      fallback(testo, fatto);
-    }
-  });
-});
 
 function fallback(testo, cb){
   var ta = document.createElement('textarea');
