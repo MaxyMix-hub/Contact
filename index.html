@@ -1,373 +1,96 @@
-<!DOCTYPE html>
-<html lang="it">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Massimiliano Rocco - Contatti</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Padel Score Privacy Policy</title>
 <style>
-/* Stile base del contenitore a cassetto */
-.box-fatturazione {
-  background: transparent;
-  margin-top: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-/* Stile della barra cliccabile */
-.btn-fatturazione {
-  padding: 15px 20px;
-  font-weight: 600;
-  color: var(--blu, #1a237e); /* Assicurati che richiami il tuo blu */
-  cursor: pointer;
-  list-style: none; /* Nasconde la freccia standard */
-  text-align: center;
-  user-select: none;
-}
-
-/* Nasconde la freccia standard anche su Safari/Chrome vecchi */
-.btn-fatturazione::-webkit-details-marker {
-  display: none;
-}
-
-/* Effetto hover sulla barra */
-.btn-fatturazione:hover {
-background-color: rgba(0, 0, 0, 0.05); /* Crea un leggerissimo scurimento quando ci passi sopra, invece del grigio pieno */
-}
-
-/* Il contenuto interno che appare quando è aperto */
-.contenuto-fatturazione {
-  padding: 0 20px 20px 20px;
-  text-align: center;
-}
-
-/* Lo stile dell'immagine del QR */
-.qr-cassa {
-  max-width: 180px; /* Dimensione perfetta per farsi scannerizzare dalla pistola */
-  height: auto;
-  margin: 15px auto;
-  border-radius: 8px;
-  display: block;
-}
-
-/* Stile del testo dei dati */
-.contenuto-fatturazione p {
-  margin: 8px 0;
-  font-size: 0.95rem;
-  color: var(--blu, #1a237e); /* Assicurati che richiami il tuo blu */
-}
-
-.contenuto-fatturazione strong {
-  color: var(--blu, #1a237e); /* Assicurati che richiami il tuo blu */
-}
-  
-  :root{
-    --blu: #414C6A;
-    --blu-hover: #2e364b;
-    --bg: #f4f6f9;
-    --testo: #1a1a1a;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  
-  .box-cassa {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(65, 76, 106, 0.15);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    text-align: center;
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-  
-  .box-cassa img {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: 0 auto;
-  }
-
-.btn-share {
-    width: 100%;
-    background: linear-gradient(180deg, #546185, var(--blu));
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(65, 76, 106, 0.15), 0 2px 6px rgba(0,0,0,.04);
-    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s;
-  }
-  
-.btn-share:hover { 
-    background: linear-gradient(180deg, var(--blu), var(--blu-hover));
-    transform: translateY(-2px); /* È questo che lo fa "saltare" in alto! */ 
-    box-shadow: 0 12px 28px rgba(65, 76, 106, 0.22), 0 4px 10px rgba(0,0,0,.06);
-  }
-  .btn-share:active { transform: scale(0.97); }
-    
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    background: radial-gradient(circle at 0% 0%, rgba(65, 76, 106, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 100% 100%, rgba(65, 76, 106, 0.10) 0%, transparent 50%),
-                #f0f3f7;
-    background-attachment: fixed;
-    color:var(--testo);
-    line-height:1.5;
-    padding:24px 16px 48px;
-  }
-  
-  .card{
-    max-width:460px;
-    margin:0 auto;
-    background:rgba(255,255,255,.82);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.6);
-    border-radius:28px;
-    box-shadow:
-        0 24px 50px rgba(65, 76, 106, 0.12),
-        0 4px 12px rgba(0,0,0,.03);
-    overflow:hidden;
-  }
-  
-  .header{
-    text-align:center;
-    padding:36px 20px 10px;
-  }
-  
-  .foto{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border: 3px solid white;
-    box-shadow: 0 4px 14px rgba(0,0,0,.08);
-    margin:0 auto 16px;
-    display:block;
-  }
-  
-  .nome{
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--blu);
-  }
-  
-  .ruolo{
-    font-size:1rem;
-    color:#555;
-    margin-top:2px;
-  }
-  
-  .pulsanti{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap:14px;
-    padding:20px;
-  }
-  
-  .btn{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-height: 90px;
-    background:linear-gradient(180deg, #546185, var(--blu));
-    color:#fff;
-    text-decoration:none;
-    font-size:0.95rem;
-    font-weight:700;
-    padding:14px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:22px;
-    box-shadow:
-        0 8px 20px rgba(65, 76, 106, 0.15),
-        0 2px 6px rgba(0,0,0,.04);
-    cursor:pointer;
-    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s;
-    text-align:center;
-  }
-  
-  .btn i { font-size: 1.4rem; }
-  .btn:hover{
-    background:linear-gradient(180deg, var(--blu), var(--blu-hover));
-    transform:translateY(-2px);
-    box-shadow:
-        0 12px 28px rgba(65, 76, 106, 0.22),
-        0 4px 10px rgba(0,0,0,.06);
-  }
-  .btn:active{transform:scale(.97);}
-  
-  .sezione{
-    padding:18px 24px;
-  }
-  .sezione h2{
-    font-size:1.05rem;
-    color:var(--blu);
-    margin-bottom:12px;
-    border-bottom:2px solid rgba(65, 76, 106, 0.15);
-    padding-bottom:6px;
-  }
-  
-  .nav-box {
-    display: flex;
-    gap: 10px;
-    margin-top: 8px;
-  }
-  .nav-btn {
-    background: white;
-    color: var(--blu);
-    border: 1px solid rgba(65, 76, 106, 0.2);
-    border-radius: 14px;
-    padding: 10px 4px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-decoration: none;
-    text-align: center;
-    flex: 1;
-    box-shadow: 0 4px 10px rgba(0,0,0,.03);
-    transition: .2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-btn i { font-size: 1.2rem; }
-  .nav-btn:hover { background: var(--blu); color: white; border-color: var(--blu); }
-  .nav-btn:active { transform: scale(0.97); }
-
-  .fatt-riga{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:12px;
-    color: var(--blu);
-    font-weight:400;
-  }
-  .fatt-riga .info{flex:1;min-width:0; font-size: 0.95rem;}
-  
-  .copia-btn{
-    background:white;
-    color:var(--blu);
-    border:1px solid rgba(65, 76, 106, 0.2);
-    border-radius:12px;
-    padding:8px 14px;
-    font-weight:700;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,.05);
-    transition:.2s;
-    cursor: pointer;
-  }
-  .copia-btn:hover{ background:var(--blu); color:white; }
-  .copia-btn.ok{background:#2e7d32;color:#fff;border-color:#2e7d32;}
-
-  .footer-logo {
-    text-align: center;
-    padding: 28px 20px;
-    background: var(--blu);
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .logo-bottom {
-    max-width: 130px;
-    height: auto;
-    display: inline-block;
-  }
+body{background:#000;color:#fff;font-family:Arial,sans-serif;line-height:1.6;max-width:900px;margin:auto;padding:32px}
+h1,h2{color:#c4f000}
+a{color:#c4f000}
+hr{border:0;border-top:1px solid #333;margin:48px 0}
+footer{margin-top:48px;color:#aaa}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
+<h1>Padel Score Privacy Policy</h1>
+<p>Last updated: 31 October 2026</p>
 
-<div class="card">
+<h2>Overview</h2>
+<p>Padel Score is an Android and Wear OS application developed by Massimiliano Rocco for keeping score during padel matches.</p>
 
-  <div class="header">
-    <img src="Max2.png" alt="Massimiliano Rocco" class="foto" onerror="this.style.display='none'">
-    <div class="nome">Massimiliano Rocco</div>
-    <div class="ruolo">Sales Agent Campania</div>
-  </div>
+<h2>Data collection</h2>
+<p>Padel Score does not collect, transmit, sell or share personal user data.</p>
+<p>The application does not require the creation of an account and does not collect names, email addresses, location data, contacts, photos, health information, payment information or other personal information.</p>
 
-  <div class="pulsanti">
-    <a class="btn" href="Massimiliano_Rocco.vcf"><i class="fa-solid fa-address-card"></i> Salva Contatto</a>
-    <a class="btn" href="tel:+393478810607"><i class="fa-solid fa-phone"></i> Chiamami</a>
-    <a class="btn" href="https://wa.me/393478810607?text=Ciao%20Massimiliano,%20ti%20contatto%20dal%20tuo%20biglietto%20da%20visita%20digitale." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    <a class="btn" href="mailto:massimiliano.rocco86@gmail.com"><i class="fa-solid fa-envelope"></i> Scrivimi una mail</a>
-    <a class="btn" href="tel:+390818763921"><i class="fa-solid fa-building"></i> Chiama l'ufficio</a>
-    <a class="btn" href="mailto:info@agenziarocco.it"><i class="fa-solid fa-paper-plane"></i> Email Ufficio</a>
-  </div>
+<h2>Local data</h2>
+<p>Information related to matches, including the current score, match state, undo history, match history and basic statistics such as wins, losses and incomplete matches, is stored locally on the device on which Padel Score is installed.</p>
+<p>This information is used exclusively to provide the application's functionality and is not transmitted to the developer or to external servers.</p>
 
-<!-- Cassetto Dati Fatturazione -->
-<details class="box-fatturazione">
-  <summary class="btn-fatturazione">
-    <i class="fa-solid fa-receipt"></i> Dati Fatturazione e QR Code
-  </summary>
-  
-  <div class="contenuto-fatturazione">
-    <!-- Inserisci qui il nome o il percorso della tua immagine del QR -->
-    <img src="QRCode_09949751219.gif" alt="QR Code Agenzia Entrate" class="qr-cassa">
-    
-    <p><strong>Ragione Sociale:</strong> Massimiliano Rocco</p>
-    <p><strong>Indirizzo:</strong> Via J. F. Kennedy 71 <br> 80010 Quarto (NA)</p>
-    <p><strong>P. IVA:</strong> 09949751219</p>
-    <p><strong>Codice SDI:</strong> W7YVJK9</p>
-    <p><strong>PEC:</strong> m.rocco86@pec.it</p>
+<h2>Permissions and device features</h2>
+<p>Depending on the platform and operating system version, Padel Score may use device features such as notifications and vibration to support application functionality, including quick access to an ongoing match and haptic feedback.</p>
+<p>Padel Score does not use these features to collect or transmit personal information.</p>
 
-         <br>
-   <button class="btn-share" id="btnCondividiFattura">
-        <i class="fa-solid fa-share-nodes"></i> Condividi i dati
-      </button>
-    </div>
-  
-</details>
-      
+<h2>Third-party advertising and analytics</h2>
+<p>Padel Score does not contain advertising and does not use third-party analytics, advertising trackers or user profiling services.</p>
 
-  <div class="footer-logo">
-    <img src="Logo_agenzia.png" alt="Logo Agenzia Rocco" class="logo-bottom" onerror="this.style.display='none'">
-  </div>
+<h2>Data sharing</h2>
+<p>Padel Score does not share user data with third parties.</p>
 
-</div>
+<h2>Data retention and deletion</h2>
+<p>Match information and statistics remain stored locally on the device until they are deleted by the user or the application's local data is removed.</p>
+<p>Users can delete stored statistics using the reset function available in the application. All locally stored application data can also be removed by clearing the application's data or uninstalling Padel Score from the device.</p>
 
-<script>
+<h2>Children's privacy</h2>
+<p>Padel Score does not knowingly collect personal information from children or any other users. Because the application does not collect or transmit personal data, no personal user information is stored by the developer.</p>
 
+<h2>Changes to this Privacy Policy</h2>
+<p>This Privacy Policy may be updated if the functionality of Padel Score or its data practices change. Any updated version will be published at the same Privacy Policy address.</p>
 
-function fallback(testo, cb){
-  var ta = document.createElement('textarea');
-  ta.value = testo;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try { document.execCommand('copy'); cb(); } catch(e){}
-  document.body.removeChild(ta);
-}
+<h2>Contact</h2>
+<p>Massimiliano Rocco</p>
+<p>Email: <a href="mailto:padelscoreapp.support@gmail.com">padelscoreapp.support@gmail.com</a></p>
 
-/* ---------- Condivisione Rapida Dati Fatturazione ---------- */
-document.getElementById('btnCondividiFattura').addEventListener('click', function() {
-  var testoFatturazione = "Dati per Fatturazione Elettronica:\n\n" +
-                          "Rocco Massimiliano\n" +
-                          "Via J. F. Kennedy 71 - 80010 Quarto (NA)\n" +
-                          "P.IVA 09949751219\n" +
-                          "W7YVJK9\n" +
-                          "m.rocco86@pec.it"; 
+<hr>
 
-  if (navigator.share) {
-    navigator.share({
-      title: 'Dati Fatturazione',
-      text: testoFatturazione
-    }).catch(function(error) {
-      console.log('Condivisione annullata', error);
-    });
-  } else {
-    navigator.clipboard.writeText(testoFatturazione);
-    alert("Dati copiati negli appunti!");
-  }
-});
-</script>
+<h1>Informativa sulla Privacy</h1>
+<p>Ultimo aggiornamento: 31 ottobre 2026</p>
+
+<h2>Panoramica</h2>
+<p>Padel Score è un'applicazione per Android e Wear OS sviluppata da Massimiliano Rocco per tenere il punteggio durante le partite di padel.</p>
+
+<h2>Raccolta dei dati</h2>
+<p>Padel Score non raccoglie, trasmette, vende o condivide dati personali degli utenti.</p>
+<p>L'applicazione non richiede la creazione di un account e non raccoglie nomi, indirizzi email, dati sulla posizione, contatti, foto, informazioni sanitarie, dati di pagamento o altre informazioni personali.</p>
+
+<h2>Dati memorizzati localmente</h2>
+<p>Le informazioni relative alle partite, compresi punteggio corrente, stato del match, cronologia Undo, cronologia delle partite e statistiche di base come vittorie, sconfitte e partite incomplete, vengono memorizzate localmente sul dispositivo su cui è installato Padel Score.</p>
+<p>Queste informazioni vengono utilizzate esclusivamente per fornire le funzionalità dell'app e non vengono trasmesse allo sviluppatore o a server esterni.</p>
+
+<h2>Autorizzazioni e funzionalità del dispositivo</h2>
+<p>A seconda della piattaforma e della versione del sistema operativo, Padel Score può utilizzare funzionalità del dispositivo come notifiche e vibrazione per supportare il funzionamento dell'app, ad esempio per consentire l'accesso rapido a una partita in corso e fornire feedback aptico.</p>
+<p>Padel Score non utilizza queste funzionalità per raccogliere o trasmettere informazioni personali.</p>
+
+<h2>Pubblicità e analytics di terze parti</h2>
+<p>Padel Score non contiene pubblicità e non utilizza servizi di analytics di terze parti, tracker pubblicitari o servizi di profilazione degli utenti.</p>
+
+<h2>Condivisione dei dati</h2>
+<p>Padel Score non condivide dati degli utenti con terze parti.</p>
+
+<h2>Conservazione ed eliminazione dei dati</h2>
+<p>Le informazioni sulle partite e le statistiche restano memorizzate localmente sul dispositivo fino a quando non vengono eliminate dall'utente o vengono rimossi i dati locali dell'applicazione.</p>
+<p>Gli utenti possono eliminare le statistiche memorizzate tramite la funzione di reset disponibile nell'app. Tutti i dati locali dell'app possono inoltre essere rimossi cancellando i dati dell'applicazione o disinstallando Padel Score dal dispositivo.</p>
+
+<h2>Privacy dei minori</h2>
+<p>Padel Score non raccoglie consapevolmente informazioni personali da minori o da altri utenti. Poiché l'app non raccoglie né trasmette dati personali, lo sviluppatore non conserva informazioni personali degli utenti.</p>
+
+<h2>Modifiche alla presente informativa</h2>
+<p>Questa informativa sulla privacy potrà essere aggiornata qualora cambino le funzionalità di Padel Score o le modalità di trattamento dei dati. Ogni versione aggiornata verrà pubblicata allo stesso indirizzo della Privacy Policy.</p>
+
+<h2>Contatti</h2>
+<p>Massimiliano Rocco</p>
+<p>Email: <a href="mailto:padelscoreapp.support@gmail.com">padelscoreapp.support@gmail.com</a></p>
+
+<footer>Padel Score · Android & Wear OS</footer>
 </body>
 </html>
